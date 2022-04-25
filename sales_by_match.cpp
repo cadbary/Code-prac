@@ -1,49 +1,21 @@
-/*#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-    int n,count=0;
-    cin>>n;
-    int a[n];
-    for(int i=0;i<n;i++)
-    {
-        cin>>a[i];        
-        if (a[i]==a[i+1]) 
-        {
-            count++;
-            i=i+2;        
-        }
-    }
-    cout<<count;
-    
-}*/
-
-    
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int n,count=0,i,j;
-    cin>>n;
-    int c[n];
-    for(i=0; i<n; i++)
+    int n,j,count=0;
+    cin >> n;
+    
+    int k[101]={0};
+    for(auto i=0;i<n;i++)
     {
-        cin>>c[i];
+        int c;
+        cin >> c;
+        k[c]++;
     }
-    for(i=0;i<n;i++)
+    for(j=0;j<=100;j++)
     {
-        for(j=i+1;j<n;j++)
-        {
-      if(c[i]==c[j+1])
-      {
-          
-          count++;
-          i=i+2;
-            c[j]=0;
-      }
-      
-        }
+        count +=k[j]/2;
     }
-    cout<<count;
-        
+    cout<< count<<endl;
+
 }
